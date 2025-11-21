@@ -83,8 +83,32 @@ let fightButton = document.getElementById("fightButton");
 fightButton.addEventListener("click", function () {
   let randomFighter1 = fighters[Math.floor(Math.random() * fighters.length)];
   let randomFighter2 = fighters[Math.floor(Math.random() * fighters.length)];
+
+  while (randomFighter1 === randomFighter2) {
+    randomFighter2 = fighters[Math.floor(Math.random() * fighters.length)];
+  }
+
   stageEl.textContent = randomFighter1 + " vs " + randomFighter2;
+
   console.log("click");
 });
+
+// -----------------------------------------
+
+let fruits = ["Apple", "Orange", "Apple", "Apple", "Orange"];
+let appleShelf = document.getElementById("apple-shelf");
+let orangeShelf = document.getElementById("orange-shelf");
+
+function fruitSorter() {
+  for (let i = 0; i < fruits.length; i++) {
+    if (fruits[i] === "Apple") {
+      appleShelf.textContent += "Apple ";
+    } else {
+      orangeShelf.textContent += "Orange ";
+    }
+  }
+}
+
+fruitSorter();
 
 // -----------------------------------------
