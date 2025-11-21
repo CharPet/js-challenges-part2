@@ -1,0 +1,25 @@
+body {
+  font-family: "Permanent Marker";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: orange;
+}
+
+#stage {
+  margin: 20px auto;
+}
+
+button {
+  font-family: "Permanent Marker";
+  color: white;
+  background: orange;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 10px;
+  margin-top: 20px;
+}
