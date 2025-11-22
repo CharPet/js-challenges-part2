@@ -94,18 +94,30 @@ const characters = [
 const button = document.querySelector("button");
 const password1 = document.getElementById("password1");
 const password2 = document.getElementById("password2");
+const passwordLength = document.getElementById("password-length");
+const symbols = document.getElementById("symbols");
+const numbers = document.getElementById("numbers");
 
 button.addEventListener("click", (event) => {
   password1.textContent = "";
   password2.textContent = "";
+  let length = 15;
 
-  for (let i = 0; i < 15; i++) {
+  if (passwordLength.value !== "") {
+    length = parseInt(passwordLength.value);
+  }
+
+  for (let i = 0; i < length; i++) {
     password1.textContent +=
       characters[Math.floor(Math.random() * characters.length)];
   }
 
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < length; i++) {
     password2.textContent +=
       characters[Math.floor(Math.random() * characters.length)];
   }
+});
+
+password1.addEventListener("click", (event) => {
+  navigator.clipboard.writeText(password1.textContent);
 });
